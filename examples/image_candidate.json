@@ -1,0 +1,102 @@
+{
+  "modality": "image",
+  "question": "Which artifact properties accompany production curiosity and expressed desire to create?",
+  "status": "assistant_authored_candidate_not_api_generated",
+  "dimensions": [
+    {
+      "id": "i_compl",
+      "source": "artifact",
+      "definition": "Density of distinct visual elements and spatial relations within the image.",
+      "anchor_1": "Minimum observable degree of this property.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Many visually distinct elements and relations.",
+      "exclusions": "Viewer cognitive load or production difficulty.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "i_real",
+      "source": "artifact",
+      "definition": "Resemblance of depicted objects, materials and lighting to a photograph.",
+      "anchor_1": "Minimum observable degree of this property.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong photographic resemblance.",
+      "exclusions": "Truthfulness of the scene or identity of the creator.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "i_incong",
+      "source": "artifact",
+      "definition": "Presence of visibly incongruous combinations of objects or settings.",
+      "anchor_1": "Minimum observable degree of this property.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Highly incongruous visible combinations.",
+      "exclusions": "Temporal continuity or events outside the still image.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "c_curios",
+      "source": "comment",
+      "definition": "Expressed desire to learn more about the content, meaning or events of the artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Clear request for more information about its content.",
+      "exclusions": "Requests about production tools or techniques.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "p_curios",
+      "source": "comment",
+      "definition": "Expressed desire to understand the tools, techniques or process used to make the artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Explicit and strong interest in learning how it was made.",
+      "exclusions": "Claims about actual expertise or mere praise.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "enjoy",
+      "source": "comment",
+      "definition": "Expressed pleasure or enjoyment from experiencing the artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong, unambiguous pleasure in the experience.",
+      "exclusions": "Curiosity or an intention to create without expressed pleasure.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "try_des",
+      "source": "comment",
+      "definition": "Expressed wish to personally try making a similar type of creative artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong, explicit wish to try creation personally.",
+      "exclusions": "Past creation, general praise, hypothetical ability, or advice to others.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    }
+  ],
+  "correspondence": [],
+  "analysis": {
+    "predictors": [
+      "c_curios",
+      "p_curios",
+      "enjoy"
+    ],
+    "outcomes": [
+      "try_des"
+    ]
+  }
+}

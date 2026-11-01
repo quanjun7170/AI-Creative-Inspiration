@@ -1,0 +1,16 @@
+mplus_variable,position,source_column,meaning_or_coding,coding_definition
+com_uid,1,comment_uid,Unique numeric comment ID,Stable numeric identifier assigned to each retained Reddit comment. Not an LLM-coded psychological construct.
+post_uid,2,post_uid,Numeric post ID; links comments to posts,Stable numeric identifier assigned to each Reddit submission. Comments sharing this identifier belong to the same post; use as the clustering variable.
+c_score,3,comment_score_numeric,Numeric source field; -999 = missing,"Numeric Reddit comment score from the source data. This is an engagement measure, not an LLM psychological rating."
+realism,4,perceived_realism,1-10 rating; -999 = NA / missing,the degree to which the narrative world is reflective of the real world
+novelty,5,novelty,1-10 rating; -999 = NA / missing,experiencing or encountering something different to the objects regularly encountered
+unpred,6,unpredictability,1-10 rating; -999 = NA / missing,"algorithmic and artificial unpredictability, emphasizing events that exceed user expectations and anticipated goals"
+c_curios,7,content_curiosity,1-10; -999 = missing. content curiosity,"The degree to which the commenter expresses a desire to learn more about or better understand the video's content, including its events, characters, meaning, or background."
+p_curios,8,production_curiosity,1-10; -999 = missing. production curiosity,"The degree to which the commenter expresses a desire to learn more about or better understand how the video was made, including its tools, techniques, or production process."
+enjoy,9,enjoyment,1-10 rating; -999 = NA / missing,pleasurable attitude toward an entertainment experience
+try_des,10,creative_trial_desire,1-10; -999 = missing. creative trial desire,The degree to which the commenter expresses a personal wish or desire to try creating AI-generated videos or using an AI-video production tool or technique.
+p_ncomm,11,num_comments,Source Reddit post comment count at collection; not retained analytic comments; -999 = missing,"Reddit-reported number of comments on the parent submission at collection. This is the source post comment count, not the number of comments retained in the cleaned analysis dataset."
+p_score,12,score,Source Reddit post score at collection; -999 = missing,Untransformed Reddit score of the parent submission recorded in the source data at collection.
+v_real,13,video_visual_realism,"Video feature rating, 1-10; -999 = unavailable/not rated","Resemblance to real camera footage in lighting, materials, anatomy, and motion."
+v_unexp,14,video_event_unexpectedness,"Video feature rating, 1-10; -999 = unavailable/not rated",Departure from ordinary everyday expectations established by the scene.
+v_compl,15,video_visual_complexity,"Video feature rating, 1-10; -999 = unavailable/not rated","Density of concurrent visual elements, independent actions, and changes to track."

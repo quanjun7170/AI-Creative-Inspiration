@@ -1,0 +1,158 @@
+TITLE: AI showcases, parallel responses, and creative trial desire;
+DATA: File is "comments_video_mplus_v3.csv";
+VARIABLE:
+NAMES ARE
+ com_uid post_uid c_score realism novelty unpred c_curios p_curios enjoy try_des p_ncomm p_score v_real v_unexp v_compl;
+
+MISSING ARE ALL (-999);
+CLUSTER IS post_uid;
+
+! Input contains final analysis rows only.
+
+USEVARIABLES ARE
+L2IV1 L2IV2 L2IV3
+L1IV1 L1IV2 L1IV3
+MED1 MED2 MED3
+DV1 
+CTRL1 CTRL2 CTRL3
+;
+
+WITHIN ARE
+L1IV1 L1IV2 L1IV3
+CTRL1
+;
+
+BETWEEN ARE
+L2IV1 L2IV2 L2IV3
+CTRL2 CTRL3
+;
+
+DEFINE:
+L2IV1 = v_real;
+L2IV2 = v_unexp;
+L2IV3 = v_compl;
+
+L1IV1 = realism;
+L1IV2 = novelty;
+L1IV3 = unpred;
+
+! Parallel responses: content curiosity, production curiosity, enjoyment.
+MED1 = c_curios;
+MED2 = p_curios;
+MED3 = enjoy;
+
+! Core outcome: expressed creative trial desire.
+DV1 = try_des;
+
+CTRL1 = c_score;
+CTRL2 = p_ncomm;
+CTRL3 = p_score/100;
+
+CENTER
+L1IV1 L1IV2 L1IV3
+CTRL1
+(GROUPMEAN);
+
+CENTER
+L2IV1 L2IV2 L2IV3
+CTRL2 CTRL3
+(GRANDMEAN);
+
+ANALYSIS:
+TYPE = TWOLEVEL;
+ESTIMATOR = MLR;
+PROCESSORS = 4;
+
+MODEL:
+
+%WITHIN%
+
+! a paths: suffixes r/n/u denote realism/novelty/unpredictability.
+MED1 ON L1IV1 (wcr)
+  L1IV2 (wcn)
+  L1IV3 (wcu);
+MED2 ON L1IV1 (wpr)
+  L1IV2 (wpn)
+  L1IV3 (wpu);
+MED3 ON L1IV1 (wer)
+  L1IV2 (wen)
+  L1IV3 (weu);
+
+MED1 MED2 MED3 ON CTRL1;
+
+DV1 ON MED1 (wbc)
+  MED2 (wbp)
+  MED3 (wbe);
+DV1 ON L1IV1 L1IV2 L1IV3 CTRL1;
+
+MED1 WITH MED2 MED3;
+MED2 WITH MED3;
+
+%BETWEEN%
+
+! Between paths use between components, not within slopes.
+! Suffixes r/u/x denote video realism/unexpectedness/complexity.
+MED1 ON L2IV1 (bcr)
+  L2IV2 (bcu)
+  L2IV3 (bcx);
+MED2 ON L2IV1 (bpr)
+  L2IV2 (bpu)
+  L2IV3 (bpx);
+MED3 ON L2IV1 (ber)
+  L2IV2 (beu)
+  L2IV3 (bex);
+MED1 MED2 MED3 ON CTRL2 CTRL3;
+
+DV1 ON MED1 (bbc)
+  MED2 (bbp)
+  MED3 (bbe);
+DV1 ON L2IV1 L2IV2 L2IV3 CTRL2 CTRL3;
+
+MED1 WITH MED2 MED3;
+MED2 WITH MED3;
+
+MODEL CONSTRAINT:
+! All products and contrasts below use unstandardized coefficients.
+! i = specific indirect association; w/b = within/between.
+! c/p/e = content curiosity/production curiosity/enjoyment.
+NEW(
+  iwcr iwcn iwcu iwpr iwpn iwpu iwer iwen iweu
+  ibcr ibcu ibcx ibpr ibpu ibpx iber ibeu ibex
+  dwpc dwpe dbpc dbpe
+);
+
+! Within-level specific indirect associations.
+iwcr = wcr*wbc;
+iwcn = wcn*wbc;
+iwcu = wcu*wbc;
+iwpr = wpr*wbp;
+iwpn = wpn*wbp;
+iwpu = wpu*wbp;
+iwer = wer*wbe;
+iwen = wen*wbe;
+iweu = weu*wbe;
+
+! Between-level specific indirect associations.
+ibcr = bcr*bbc;
+ibcu = bcu*bbc;
+ibcx = bcx*bbc;
+ibpr = bpr*bbp;
+ibpu = bpu*bbp;
+ibpx = bpx*bbp;
+iber = ber*bbe;
+ibeu = beu*bbe;
+ibex = bex*bbe;
+
+! Conditional b-path contrasts per one raw rating point.
+! These are not standardized-effect or causal-effect comparisons.
+dwpc = wbp-wbc;
+dwpe = wbp-wbe;
+dbpc = bbp-bbc;
+dbpe = bbp-bbe;
+
+OUTPUT:
+  SAMPSTAT;
+  STANDARDIZED;
+  TECH1;
+  TECH3;
+  TECH8;

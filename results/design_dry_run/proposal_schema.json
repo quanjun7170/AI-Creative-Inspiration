@@ -1,0 +1,125 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "modality",
+    "question",
+    "dimensions",
+    "correspondence",
+    "analysis"
+  ],
+  "properties": {
+    "modality": {
+      "type": "string",
+      "enum": [
+        "video",
+        "music",
+        "image",
+        "writing"
+      ]
+    },
+    "question": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "anchor_1": {
+            "type": "string"
+          },
+          "anchor_5": {
+            "type": "string"
+          },
+          "anchor_10": {
+            "type": "string"
+          },
+          "exclusions": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "citation": {
+            "type": "string"
+          },
+          "citation_status": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "artifact",
+              "comment"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "definition",
+          "anchor_1",
+          "anchor_5",
+          "anchor_10",
+          "exclusions",
+          "rationale",
+          "citation",
+          "citation_status",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "correspondence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "artifact": {
+            "type": "string"
+          },
+          "comment": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "artifact",
+          "comment",
+          "rationale"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "predictors",
+        "outcomes"
+      ],
+      "properties": {
+        "predictors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outcomes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

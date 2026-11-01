@@ -1,0 +1,27 @@
+# Exploratory analysis
+
+{
+  "sample_flow": {
+    "input_comments": 13598,
+    "input_artifacts": 1191,
+    "retained_comments": 13598,
+    "retained_artifacts": 1191
+  },
+  "bootstrap_replicates": 2000,
+  "seed": 20261028,
+  "coefficient_scale": "unstandardized",
+  "comments_sha256": "d1673857b2c7bf49eac8456936b754df46165b16cbdcb4cc3b5603cf048f68e9",
+  "artifacts_sha256": "06f4de60099a2d38f6201238ea9a4530751f21db3f2ac9375b019de935a1e42b",
+  "method": "Post-level Pearson; within fixed effects OLS; between equal-weight post-mean OLS; artifact bootstrap",
+  "missing": "Pairwise complete correspondence; modelwise complete regressions; null retained in merged sample",
+  "cautions": [
+    "Exploratory, no multiplicity adjustment",
+    "No causal mediation or coding accuracy claim",
+    "Post means are observed aggregates, not latent between components",
+    "Repeated authors across posts are not modeled",
+    "No controls unless explicitly added in a separate model",
+    "This analysis does not reproduce the historical Mplus SEM"
+  ]
+}
+
+See correspondence.csv and exploratory_paths.csv. Confidence intervals resample artifacts, not independent comments.

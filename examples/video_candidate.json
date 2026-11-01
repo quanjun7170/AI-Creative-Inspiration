@@ -1,0 +1,149 @@
+{
+  "modality": "video",
+  "question": "Which artifact properties accompany production curiosity and expressed desire to create?",
+  "status": "assistant_authored_candidate_not_api_generated",
+  "dimensions": [
+    {
+      "id": "v_real",
+      "source": "artifact",
+      "definition": "Resemblance of depicted visuals to real camera footage in lighting, materials, anatomy and motion.",
+      "anchor_1": "Minimum observable degree of this property.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong resemblance to real camera footage.",
+      "exclusions": "Narrative plausibility, authenticity of authorship, or audience belief.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "v_compl",
+      "source": "artifact",
+      "definition": "Density of concurrent visual elements, independent actions and changes to track.",
+      "anchor_1": "Minimum observable degree of this property.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Many simultaneous distinct visual elements and actions to track.",
+      "exclusions": "Technical production difficulty or audience cognitive load.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "v_unexp",
+      "source": "artifact",
+      "definition": "Departure of depicted events from ordinary expectations established by the scene.",
+      "anchor_1": "Minimum observable degree of this property.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Marked departure from the scene-established expectations.",
+      "exclusions": "Algorithm controllability or a particular viewer's surprise.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "c_curios",
+      "source": "comment",
+      "definition": "Expressed desire to learn more about the content, meaning or events of the artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Clear request for more information about its content.",
+      "exclusions": "Requests about production tools or techniques.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "p_curios",
+      "source": "comment",
+      "definition": "Expressed desire to understand the tools, techniques or process used to make the artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Explicit and strong interest in learning how it was made.",
+      "exclusions": "Claims about actual expertise or mere praise.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "enjoy",
+      "source": "comment",
+      "definition": "Expressed pleasure or enjoyment from experiencing the artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong, unambiguous pleasure in the experience.",
+      "exclusions": "Curiosity or an intention to create without expressed pleasure.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "try_des",
+      "source": "comment",
+      "definition": "Expressed wish to personally try making a similar type of creative artifact.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong, explicit wish to try creation personally.",
+      "exclusions": "Past creation, general praise, hypothetical ability, or advice to others.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "realism",
+      "source": "comment",
+      "definition": "Expressed perception that the narrative world reflects the real world.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong, explicit expression of this perception.",
+      "exclusions": "Unexpressed reactions and external knowledge.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "novelty",
+      "source": "comment",
+      "definition": "Expressed encounter with something different from what is regularly encountered.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong, explicit expression of this perception.",
+      "exclusions": "Unexpressed reactions and external knowledge.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    },
+    {
+      "id": "unpred",
+      "source": "comment",
+      "definition": "Expressed algorithmic or artificial unpredictability and events exceeding expectations; historical definition mixes these targets.",
+      "anchor_1": "No expressed evidence of this response.",
+      "anchor_5": "Moderate, clear evidence of the defined dimension.",
+      "anchor_10": "Strong, explicit expression of this perception.",
+      "exclusions": "Unexpressed reactions and external knowledge.",
+      "rationale": "Candidate operationalization for artifact exposure and creative motivation; requires construct review.",
+      "citation": "",
+      "citation_status": "not_provided"
+    }
+  ],
+  "correspondence": [
+    {
+      "artifact": "v_real",
+      "comment": "realism",
+      "rationale": "Related but distinct visual and narrative realism targets."
+    },
+    {
+      "artifact": "v_unexp",
+      "comment": "unpred",
+      "rationale": "Partial content overlap; historical unpredictability also includes generation-related meanings."
+    }
+  ],
+  "analysis": {
+    "predictors": [
+      "c_curios",
+      "p_curios",
+      "enjoy"
+    ],
+    "outcomes": [
+      "try_des"
+    ]
+  }
+}
